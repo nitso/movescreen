@@ -46,7 +46,7 @@ for arg in sys.argv[2:] or 'a':
 # ======================================
 # scr will store a list of list: [ [ width height offset_x offset_y ] ... ]
 out = subprocess.check_output(['xrandr']).decode('ascii', 'ignore')
-reg = re.compile(" connected( primary)? ([0-9]+)x([0-9]+)\+([0-9]+)\+([0-9]+)")
+reg = re.compile(" connected( primary)? ([0-9]+)x([0-9]+)\\+([0-9]+)\\+([0-9]+)")
 scr = []
 for l in out.splitlines():
 	m = reg.search(l)
